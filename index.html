@@ -77,17 +77,51 @@
     <div class="cat-img" id="p">1006</div>
 </div>
 <script>
-        let count = 0;
-    const catCount = document.getElementById('p');
+    let count = 0;
+    const catCount = document.getElementById("p")
     catCount.innerHTML = count;
-    
-    function updateCount(){
-        count++;
-        console.log(count);
-        catCount.innerHTML = count;
-    }
 
-    document.addEventListener("click",updateCount);
+    const updateCount = () => {
+        count++;
+        catCount.innerHTML = count;
+        catCount.id = "op";
+    };
+
+    const resetCat = () => {
+        catCount.id = "p";
+    };
+    document.addEventListener("pointerdown",updateCount);
+    document.addEventListener("pointerup",resetCat);
+    //---------------------------------
+    //別種寫法
+    //let count = 0;
+    //const catCount = document.getElementById("p");
+    //catCount.innerHTML = count;
+    
+    //function updateCount(){
+    //    count++;
+    //    console.log(count);
+    //    catCount.innerHTML = count;
+
+    //    catCount.id = "op";
+
+    //}
+    
+    //const closeMouth = function CloseMouth(){
+    //    catCount.id = "p";
+    //}
+    //箭頭函式
+    //const closeMouth = () => {
+    //    catCount.id = "p";
+    //}
+
+    //document.addEventListener("click",updateCount);
+    //document.addEventListener("pointerdown",updateCount);
+    //document.addEventListener("pointerup",closeMouth);
+
+    //document.addEventListener("keydown",updateCount);
+    //document.addEventListener("keyup",closeMouth);
+
 </script>
 
 </body>
